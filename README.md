@@ -91,7 +91,7 @@ Data Preparation are available in `verl-tool/examples/data_preprocess/`.
 Train the SFT model using reinforcement learning with a User Simulator (Please run the user simu):
 
 ```bash
-bash verl-tool/examples/train/interactive_r1/main_exp/run_train_interactive_7b_collab_math_large_us_llama-3.1-8B.sh
+bash verl-tool/examples/train/proactive_interactive_r1/main_exp/run_train_interactive_7b_collab_math_large_us_llama-3.1-8B.sh
 ```
 
 #### Training Logs
