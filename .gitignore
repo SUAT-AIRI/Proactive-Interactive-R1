@@ -2,6 +2,7 @@ __pycache__/
 **/.ipynb
 logs/
 *.pyc
+**.ipynb
 verl-tool/data/
 verl-tool/outputs/
 verl-tool/verl_step_records/
