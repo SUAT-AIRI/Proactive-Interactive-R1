@@ -28,7 +28,7 @@ Current reasoning LLMs (e.g., GPT-o1, DeepSeek-R1) suffer from **blind self-thin
 Experience the "Reasoning While Asking" capability:
 
 <p align="center">
-<img src="image/demo.png" width="1200" alt="PIR Demo">
+<img src="image/demo.png" width="1000" alt="PIR Demo">
 </p>
 
 1. Download the model from Hugging Face (recommended: [Proactive-Interactive-R1-Math-7B](https://huggingface.co/Proactive-Interactive-R1/Proactive-Interactive-R1-Math-7B))
