@@ -1,0 +1,50 @@
+### model
+model_name_or_path: deepseek-ai/DeepSeek-R1-Distill-Qwen-7B
+trust_remote_code: true
+
+### method
+stage: sft
+do_train: true
+finetuning_type: full
+deepspeed: examples/deepspeed/ds_z3_offload_config.json  # choices: [ds_z0_config.json, ds_z2_config.json, ds_z3_config.json]
+
+### dataset
+dataset: Reasoning_While_Asking_SFT_Dataset
+template: deepseekr1
+cutoff_len: 4096
+max_samples: 4000
+overwrite_cache: true
+preprocessing_num_workers: 16
+dataloader_num_workers: 4
+
+### special tokens
+add_tokens: "<think>,</think>,<asking>,</asking>,<response>,</response>,<answer>,</answer>"
+resize_vocab: true           # resize vocab
+skip_special_tokens: false   # skip special tokens when decoding
+
+### output
+output_dir: /data2/chenxin/model_sft_results/distill-qwen-7b/full/Proactive-Interactive-R1-SFT-7B
+logging_steps: 1
+save_total_limit: 1
+plot_loss: true
+overwrite_output_dir: true
+save_only_model: true
+# report_to: swanlab  # choices: [none, wandb, tensorboard, swanlab, mlflow]
+
+### train
+per_device_train_batch_size: 8
+gradient_accumulation_steps: 1
+learning_rate: 1.0e-5
+num_train_epochs: 3
+lr_scheduler_type: cosine
+warmup_ratio: 0.03
+bf16: true
+ddp_timeout: 180000000
+resume_from_checkpoint: null
+
+### eval
+# eval_dataset: alpaca_en_demo
+# val_size: 0.1
+# per_device_eval_batch_size: 1
+# eval_strategy: steps
+# eval_steps: 500

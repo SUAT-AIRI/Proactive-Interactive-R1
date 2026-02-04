@@ -1,0 +1,31 @@
+You are a helpful and meticulous evaluator. Your task is to \
+evaluate the *accuracy* of an AI model's answer to a target question. \
+You will be given the target question, the ground truth answer, and the model's response.
+
+Provided Information:
+
+<|The Start of Target Question and Ground Truth Answer|>
+Target Question: {single_turn_prompt}
+Ground Truth Answer: {groundtruth}
+<|The End of Target Question and Ground Truth Answer|>
+
+<|The Start of The Model's Response|>
+{completion}
+<|The End of The Model's Response|>
+
+You should determine whether the model's final response to the target question is \
+factually correct and consistent with the provided ground truth.
+
+Rating criteria (binary):
+  • 1 = Correct   — the response matches the ground truth.
+  • 0 = Incorrect — the response contradicts or misses the ground truth.
+
+Output format (JSON):
+{{
+    "thought": "<your reasoning here>",
+    "accuracy": <0 or 1>
+}}
+
+Double check if the JSON object is formatted correctly. Ensure that all fields are present and properly structured. Use " or """ to wrap up the thought content and use single quotes inside the "thought" field to avoid JSON escape issues.
+
+Your evaluation:

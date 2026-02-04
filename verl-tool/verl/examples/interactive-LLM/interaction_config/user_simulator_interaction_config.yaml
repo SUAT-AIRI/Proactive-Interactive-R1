@@ -1,0 +1,4 @@
+interaction:
+  - name: "collabllm-multiturn-math-hard"
+    class_name: "verl.interactions.user_simulator_interaction.UserSimulatorInteraction"
+    config: {}
