@@ -36,13 +36,11 @@ Experience the "Reasoning While Asking" capability:
 3. Run the interactive script:
 
 ```bash
-python run_math_interactive_generation.py \
-    --input_file "verl-tool/data/collabllm/collabllm-multiturn-math-hard-large/test.parquet" \
-    --model_url "http://localhost:8821" \
+python run_demo_interactive_generation.py \
+    --input_file "verl-tool/datasets/mip/gsm8k.json" \
+    --model_url "http://localhost:1136" \
     --model_name Proactive-Interactive-R1-Math-7B \
-    --user_simulator_url "http://localhost:8875" \
-    --user_simulator_name Llama-3.1-8B-Instruct \
-    --api_key YOUR-API-KEY
+    --output_dir results/
 ```
 
 Unlike standard reasoning LLMs that hallucinate when premises are missing, **PIR will pause reasoning to ask you for clarification**.
@@ -96,7 +94,7 @@ Train the SFT model using reinforcement learning with a User Simulator (Please r
 bash verl-tool/examples/train/interactive_r1/main_exp/run_train_interactive_7b_collab_math_large_us_llama-3.1-8B.sh
 ```
 
-### Training Logs
+#### Training Logs
 
 View our training experiments on [SwanLab](https://swanlab.cn/@chenx/Proactive-Interactive-R1).
 

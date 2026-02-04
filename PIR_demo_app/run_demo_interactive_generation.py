@@ -174,7 +174,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Interactive Generation with Human Input")
     parser.add_argument("--input_file", type=str, required=False, help="训练数据集路径", default="/data/home/chenxin/verl_interactive/datasets/mip/gsm8k.json")
     parser.add_argument("--model_url", type=str, required=False, help="模型URL", default="http://localhost:1136")
-    parser.add_argument("--tokenizer_path", type=str, required=False, help="分词器路径", default="/home/chenxin/shared/models/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B")
     parser.add_argument("--model_name", type=str, required=False, help="模型名称", default="Proactive-Interactive-R1-Math-7B")
     parser.add_argument("--question_key", type=str, required=False, help="问题字段名称", default="question")
     parser.add_argument("--output_dir", type=str, required=False, help="输出目录", default="results/")
